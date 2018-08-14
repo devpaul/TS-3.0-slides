@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>TypeScript 3.0</title>
+
+	<meta name="description" content="All About TypeScript 3.0">
+	<meta name="author" content="Paul Shannon">
+
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="node_modules/reveal.js/css/theme/sky.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+	<link rel="stylesheet" href="resources/main.css">
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+
+<div class="reveal">
+	<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+		<section>
+			<h2>TypeScript 3.0</h2>
+		</section>
+
+		<section>
+			<h2>Hello!</h2>
+
+			<div class="two-column">
+				<div>
+					<h3>Paul Shannon</h3>
+					<img src="assets/images/sitepen.png" class="removeFormatting">
+				</div>
+				<div>
+					<ul>
+						<li>Sr Engineer @ SitePen</li>
+						<li>Talkscript Podcast</li>
+						<li>Phoenix TypeScript</li>
+						<li>Committer: Dojo, Intern</li>
+						<li class="github no-style"><a href="https://github.com/devpaul">devpaul</a></li>
+						<li class="twitter no-style"><a href="https://twitter.com/developerPaul">@developerPaul</a></li>
+					</ul>
+				</div>
+			</div>
+			<aside class="notes">
+				TODO add images to intern, podcast, phxts, github, twitter
+			</aside>
+		</section>
+
+		<section>
+			<h1>TypeScript 3.0</h1>
+			<p>A new milestone</p>
+		</section>
+
+		<section>
+			<h3>But first...</h3>
+			<p> a quick look back</p>
+		</section>
+
+		<section>
+			<h3>TypeScript 1.0</h3>
+			<p>Let us build type-safe applications</p>
+		</section>
+
+		<section>
+			<h3>TypeScript 2.0</h3>
+			<p>Let us build and describe libraries</p>
+		</section>
+
+		<section>
+			<h3>TypeScript 3.0</h3>
+			<p>Will fill in the gaps necessary to build a complete ecosystem</p>
+		</section>
+
+		<section>
+			<h2>New Features!</h2>
+		</section>
+
+		<section>
+			<h3>Richer tuple types</h3>
+		</section>
+
+		<section>
+			<h3>Extracting and spreading parameter lists</h3>
+
+			<p>Rest parameters can now be defined as a generic and inferred as tuples!</p>
+			<aside class="notes">
+				See example tuple-rest.ts
+			</aside>
+		</section>
+
+		<section>
+			<h3>Richer tuple types</h3>
+
+			<pre><code data-trim data-noescape>
+				type Coordinate = [ number, number, number? ];
+				type Restful = [ number, ... string[]];
+				type Empty = [];
+			</code></pre>
+
+			<p>tuple types better match parameter lists</p>
+		</section>
+
+		<section>
+			<h3>The unknown type</h3>
+
+			<p class="fragment">the least-capable type</p>
+
+			<aside class="notes">
+				See example unknown.ts
+
+				<ul>
+					<li>Requires guards or type casting</li>
+					<li>Is great for user-provided data</li>
+					<li>any allows anything, unknown requires identification</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section>
+			<h2>Project References</h2>
+
+			<p class="fragment">enables projects to coexist</p>
+
+			<ul class="fragment">
+				<li>sibling projects are aware of each other</li>
+				<li>projects are built incrementally</li>
+			</ul>
+			<aside class="notes">
+					<p>See project-references in examples</p>
+					<code>npx tsc -b --verbose</code>
+				</aside>
+		</section>
+
+		<section>
+			<h3>Improved errors</h3>
+
+			<aside class="notes">
+				See error-messages.ts in examples
+			</aside>
+		</section>
+
+		<section>
+			<h3>JSX Support for defaultProps</h3>
+
+			<p>provides default values from defaultProps</p>
+
+			<aside class="notes">see defaultProps.tsx</aside>
+		</section>
+
+		<section>
+			<h3>Feature directives</h3>
+
+			<pre><code>
+				/// &lt;reference lib="es2015.promise" /&gt;
+				export {};
+			</code></pre>
+
+			<p>Provides an expectation for a feature to be present.</p>
+
+			<aside class="notes">
+				I haven't had a lot of time to play with this one. It seems like it could end up being rather dangerous.
+				See example feature.ts
+			</aside>
+		</section>
+
+		<section>
+			<h3>Editor productivty</h3>
+
+			<ul>
+				<li>named import refactorings</li>
+				<li>closeing JSX tag completions and outlining</li>
+				<li>Quick fix: unreachable code</li>
+				<li>Quick fix: unused labels</li>
+			</ul>
+		</section>
+
+		<section>
+			<h1>The Future</h1>
+			<aside class="notes">
+				I expect TS 3.0 will really begin to bring together the development story for large projects enabling frameworks and enterprise projects
+			</aside>
+		</section>
+
+		<section>
+			<h2>References</h2>
+
+			<ul>
+				<li><a href="https://blogs.msdn.microsoft.com/typescript/2018/07/30/announcing-typescript-3-0">Announcing TypeScript 3.0</a></li>
+				<li><a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html">Handbook: TypeScript 3.0</a></li>
+			</ul>
+		</section>
+	</div>
+</div>
+
+<script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+<script src="node_modules/reveal.js/js/reveal.js"></script>
+<script src="src/index.js"></script>
+
+</body>
+</html>
