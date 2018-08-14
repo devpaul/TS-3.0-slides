@@ -68,34 +68,138 @@
 		</section>
 
 		<section>
-			<h1>The Journey</h1>
+			<h1>TypeScript 3.0</h1>
+			<p>A new milestone</p>
 		</section>
 
 		<section>
-			<h1>New Features</h1>
-
-			* Project References
-			* Extracting and spreading parameter lists with tuples
-			* Richer tuple types
-			* The unknown type
-			* Improved errors and UX
-			* JSX
-				* Support for default props
-			* /// <reference lib="" /> directives
-			* Editor productivity
-				* named import refactorings
-				* Closing JSX tag completions and outlining
-				* Quick fixes
-					* unreachable code
-					* unused labels
-			* Breaking changes
-				* unknown
-				* intersecting w/ null or undefined reduces to null or undefined outside of strictNullChecks
-				* API breaking changes
+			<h3>But first...</h3>
+			<p> a quick look back</p>
 		</section>
 
 		<section>
-			<h1>The future</h1>
+			<h3>TypeScript 1.0</h3>
+			<p>Let us build type-safe applications</p>
+		</section>
+
+		<section>
+			<h3>TypeScript 2.0</h3>
+			<p>Let us build and describe libraries</p>
+		</section>
+
+		<section>
+			<h3>TypeScript 3.0</h3>
+			<p>Will fill in the gaps necessary to build a complete ecosystem</p>
+		</section>
+
+		<section>
+			<h2>New Features!</h2>
+		</section>
+
+		<section>
+			<h3>Richer tuple types</h3>
+		</section>
+
+		<section>
+			<h3>Extracting and spreading parameter lists</h3>
+
+			<p>Rest parameters can now be defined as a generic and inferred as tuples!</p>
+			<aside class="notes">
+				See example tuple-rest.ts
+			</aside>
+		</section>
+
+		<section>
+			<h3>Richer tuple types</h3>
+
+			<pre><code data-trim data-noescape>
+				type Coordinate = [ number, number, number? ];
+				type Restful = [ number, ... string[]];
+				type Empty = [];
+			</code></pre>
+
+			<p>tuple types better match parameter lists</p>
+		</section>
+
+		<section>
+			<h3>The unknown type</h3>
+
+			<p class="fragment">the least-capable type</p>
+
+			<aside class="notes">
+				See example unknown.ts
+
+				<ul>
+					<li>Requires guards or type casting</li>
+					<li>Is great for user-provided data</li>
+					<li>any allows anything, unknown requires identification</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section>
+			<h2>Project References</h2>
+
+			<p class="fragment">enables projects to coexist</p>
+
+			<ul class="fragment">
+				<li>sibling projects are aware of each other</li>
+				<li>projects are built incrementally</li>
+			</ul>
+			<aside class="notes">
+					<p>See project-references in examples</p>
+					<code>npx tsc -b --verbose</code>
+				</aside>
+		</section>
+
+		<section>
+			<h3>Improved errors</h3>
+
+			<aside class="notes">
+				See error-messages.ts in examples
+			</aside>
+		</section>
+
+		<section>
+			<h3>JSX Support for defaultProps</h3>
+
+			<p>provides default values from defaultProps</p>
+
+			<aside class="notes">see defaultProps.tsx</aside>
+		</section>
+
+		<section>
+			<h3>Feature directives</h3>
+
+			<pre><code>
+				/// &lt;reference lib="es2015.promise" /&gt;
+				export {};
+			</code></pre>
+
+			<p>Provides an expectation for a feature to be present.</p>
+
+			<aside class="notes">
+				I haven't had a lot of time to play with this one. It seems like it could end up being rather dangerous.
+				See example feature.ts
+			</aside>
+		</section>
+
+		<section>
+			<h3>Editor productivty</h3>
+
+			<ul>
+				<li>named import refactorings</li>
+				<li>closeing JSX tag completions and outlining</li>
+				<li>Quick fix: unreachable code</li>
+				<li>Quick fix: unused labels</li>
+			</ul>
+		</section>
+
+		<section>
+			<h1>The Future</h1>
+			<aside class="notes">
+				I expect TS 3.0 will really begin to bring together the development story for large projects enabling frameworks and enterprise projects
+			</aside>
 		</section>
 
 		<section>

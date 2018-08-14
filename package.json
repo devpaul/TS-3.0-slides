@@ -24,6 +24,7 @@
     "webserv": "^0.12.0"
   },
   "dependencies": {
+    "react": "^16.4.2",
     "reveal.js": "^3.7.0"
   }
 }

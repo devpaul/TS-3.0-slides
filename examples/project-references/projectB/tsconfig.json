@@ -1,0 +1,18 @@
+// ./src/bar/tsconfig.json
+{
+	"compilerOptions": {
+		// Needed for project references.
+		"composite": true,
+		"declaration": true,
+		// Other options...
+		"outDir": "../lib/projectB",
+		"strict": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+	},
+	"references": [
+		{
+			"path": "../shared"
+		}
+	]
+}
